@@ -12,7 +12,7 @@ exports.seed = async function (knex) {
         price: 99.99,
         category: 'Category 1',
         qty: 10,
-        imageURL: './assets/products/bluetshirt.jpg',
+        imageURL: '/images/redtshirt.jpg',
       },
       {
         productID: '5bf7bd6c-2b16-4129-bddc-9d37ff8539e9',
@@ -21,7 +21,7 @@ exports.seed = async function (knex) {
         price: 49.99,
         category: 'Category 2',
         qty: 20,
-        imageURL: './assets/products/redtshirt.jpg',
+        imageURL: '/images/bluetshirt.jpg',
       },
       {
         productID: '90ac3319-70d1-4a51-b91d-ba6c2464408c',
@@ -30,7 +30,7 @@ exports.seed = async function (knex) {
         price: 149.99,
         category: 'Category 1',
         qty: 5,
-        imageURL: './assets/products/bluetshirt.jpg',
+        imageURL: '/images/redtshirt.jpg',
       }
     ]);
   };
