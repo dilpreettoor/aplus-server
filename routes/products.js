@@ -14,7 +14,7 @@ require('dotenv').config();
 
 const knex = require('knex')({
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: 'postgres://xznpjiniubcnit:fcde821f872257bdef085aa2231ac446e69585b0e414d79fd935f3e0eff2849d@ec2-44-214-132-149.compute-1.amazonaws.com:5432/d5105gc4hbqde1',
   });
   
 // GET all product items
