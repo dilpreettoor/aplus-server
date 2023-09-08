@@ -22,7 +22,7 @@ module.exports = {
   },
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL || 'postgres://aplusadmin:hMtsccvbNjhGFvHEvCOnIz0XcTKDjKZP@dpg-cjt9ealhtt0c73b2unsg-a/aplus_dsuj', 
+    connection: process.env.DATABASE_URL || 'postgres://aplusadmin:hMtsccvbNjhGFvHEvCOnIz0XcTKDjKZP@dpg-cjt9ealhtt0c73b2unsg-a/aplus_dsuj' + "?sslmode=require", 
     migrations: {
       directory: './migrations',
     },
