@@ -3,15 +3,29 @@
  * @returns { Promise<void> }
  */
 exports.seed = async function (knex) {
-    // Delete existing data
     await knex('order_details').del();
     await knex('orders').del();
+    await knex('users').del();
   
-    // Insert data into the "orders" table
+    await knex('users').insert([
+      {
+        userID: '1f253e59-3f35-4e1c-85af-6f0ea22706cc',
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'johndoe@example.com',
+      },
+      {
+        userID: '2c9a4b10-0a6c-4e88-b49d-ec7ea5c722c5',
+        firstName: 'Jane',
+        lastName: 'Smith',
+        email: 'janesmith@example.com',
+      },
+    ]);
+  
     await knex('orders').insert([
       {
         orderID: 'a1f1e03b-85e7-4ab1-b8e5-1c42de774cff',
-        userID: '123e4567-e89b-12d3-a456-426655440000',
+        userID: '1f253e59-3f35-4e1c-85af-6f0ea22706cc',
         orderDate: '2023-09-02',
         orderStatus: 'Processing',
         pickupTime: '2023-09-02 14:00:00',
@@ -19,7 +33,7 @@ exports.seed = async function (knex) {
       },
       {
         orderID: 'e8eab23d-1755-42f3-96a7-5aee23b4a635',
-        userID: '987e6543-21d0-45a6-8234-789654321000',
+        userID: '2c9a4b10-0a6c-4e88-b49d-ec7ea5c722c5',
         orderDate: '2023-09-02',
         orderStatus: 'Completed',
         pickupTime: '2023-09-02 15:30:00',
@@ -27,7 +41,6 @@ exports.seed = async function (knex) {
       },
     ]);
   
-    // Insert data into the "order_details" table
     await knex('order_details').insert([
       {
         orderDetailsID: '8c83d3e5-4521-4b06-8c99-89e242fa1e0d',
