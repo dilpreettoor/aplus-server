@@ -2,15 +2,21 @@ const express = require('express');
 const router = express.Router();
 require('dotenv').config();
 
+// const knex = require('knex')({
+//     client: 'pg',
+//   connection: {
+//     host : process.env.DATABASE_URL,
+//     user : process.env.DB_USER,
+//     password : process.env.DB_PASSWORD,
+//     database : process.env.DB_NAME
+// }
+// });
+
 const knex = require('knex')({
     client: 'pg',
-  connection: {
-    host : process.env.DATABASE_URL,
-    user : process.env.DB_USER,
-    password : process.env.DB_PASSWORD,
-    database : process.env.DB_NAME
-}
-});
+    connection: process.env.DATABASE_URL,
+  });
+  
 // GET all product items
 router.get('/', (_req, res) => {
     knex
