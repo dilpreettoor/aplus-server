@@ -1,9 +1,9 @@
 {
   "name": "aplus-server",
   "version": "1.0.0",
-  "main": "index.jsx",
+  "main": "index.js",
   "scripts": {
-    "start": "node index.jsx",
+    "start": "node index.js",
     "dev": "npx nodemon index.js",
     "migrate": "knex migrate:latest",
     "migrate:down": "knex migrate:down",
