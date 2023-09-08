@@ -26,7 +26,7 @@ router.get('/', (_req, res) => {
             res.status(200).json(products);
         })
         .catch((error) => {
-            console.error(error);
+            console.error(error+connection);
             res.status(500).send("Error getting product items :(");
         });
 });
