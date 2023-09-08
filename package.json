@@ -1,7 +1,7 @@
 {
   "name": "aplus-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "start": "node index.jsx",
     "dev": "npx nodemon index.js",
