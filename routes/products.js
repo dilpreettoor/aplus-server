@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 require('dotenv').config();
 
-const environment = process.env.NODE_ENV || 'development';
+const environment = process.env.NODE_ENV || 'production';
 const db = knex(config[environment]);
   
 // GET all product items
