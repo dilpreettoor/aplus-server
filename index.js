@@ -1,8 +1,6 @@
 const express = require('express');
 const knex = require('knex');
 
-const environment = process.env.NODE_ENV || 'production';
-const db = knex(config[environment]);
 
 // Middleware for creating a session id on server and a session cookie on client
 const expressSession = require('express-session');
@@ -60,14 +58,14 @@ passport.use(
     (_accessToken, _refreshToken, profile, done) => {
       console.log('GitHub profile:', profile);
 
-      db('users')
+      knex('users')
         .select('id')
         .where({ github_id: profile.id })
         .then(user => {
           if (user.length) {
             done(null, user[0]);
           } else {
-            db('users')
+        knex('users')
               .insert({
                 github_id: profile.id,
                 avatar_url: profile._json.avatar_url,
@@ -102,7 +100,7 @@ passport.deserializeUser((userId, done) => {
   console.log('deserializeUser (user id):', userId);
 
   // Query user information from the database for currently authenticated user
-  db('users')
+knex('users')
     .where({ id: userId })
     .then(user => {
       console.log('req.user:', user[0]);
