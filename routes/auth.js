@@ -5,12 +5,8 @@ const passport = require('passport');
 
 require('dotenv').config();
 
-// Create a login endpoint which kickstarts the auth process
-// Here, you can also specify exactly what type of access you need by configuring scope: https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps
-// ie: passport.authenticate("github", { scope: ["user:email", "repo"] })
 router.get('/github', passport.authenticate('github'));
 
-// GitHub auth Callback: http://localhost:5050/auth/github/callback
 router.get(
   '/github/callback', 
   passport.authenticate('github', {
@@ -22,7 +18,7 @@ router.get(
   }
 );
 
-// User profile endpoint that requires authentication
+// User profile endpoint th00at requires authentication
 router.get('/profile', (req, res) => {
   // Passport stores authenticated user information on `req.user` object.
   // Comes from done function of `deserializeUser`

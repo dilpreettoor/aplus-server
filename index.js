@@ -5,7 +5,7 @@ const knex = require('knex');
 // Middleware for creating a session id on server and a session cookie on client
 const expressSession = require('express-session');
 
-// Add http headers, small layer of security
+// Add http headers
 const helmet = require('helmet');
 
 // Passport library and Github Strategy
