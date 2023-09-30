@@ -6,12 +6,12 @@ require('dotenv').config();
 
 const environment = process.env.NODE_ENV || 'production';
 const db = knex(config[environment]);
-  
-// GET all product items
+
+// GET specific columns from product items
 router.get('/', (_req, res) => {
     db
-        .select('*')
-        .from('products')
+        .select('category', 'name', 'description', 'salepriceinctax')
+        .from('mytable')
         .then((products) => {
             res.status(200).json(products);
         })

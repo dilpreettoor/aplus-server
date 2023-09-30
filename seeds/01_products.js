@@ -6,7 +6,7 @@ exports.seed = async function (knex) {
     await knex('products').del();
     await knex('products').insert([
       {
-        productID: '2922c286-16cd-4d43-ab98-c79f698aeab0',
+        productID: '11111111-1111-1111-1111-111111111111',
         productName: 'Product 1',
         description: 'Description for Product 1',
         price: 99.99,
@@ -15,7 +15,7 @@ exports.seed = async function (knex) {
         imageURL: '/images/redtshirt.jpg',
       },
       {
-        productID: '5bf7bd6c-2b16-4129-bddc-9d37ff8539e9',
+        productID: '22222222-2222-2222-2222-222222222222',
         productName: 'Product 2',
         description: 'Description for Product 2',
         price: 49.99,
@@ -24,7 +24,7 @@ exports.seed = async function (knex) {
         imageURL: '/images/bluetshirt.jpg',
       },
       {
-        productID: '90ac3319-70d1-4a51-b91d-ba6c2464408c',
+        productID: '33333333-3333-3333-3333-333333333333',
         productName: 'Product 3',
         description: 'Description for Product 3',
         price: 149.99,
