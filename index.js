@@ -113,10 +113,12 @@ knex('users')
 });
 
 const productsRouter = require('./routes/products');
+const productRouter = require('./routes/product');
 const authRoutes = require('./routes/auth');
 
 app.use('/products', productsRouter);
 app.use('/auth', authRoutes);
+app.use('/product', productRouter);
 
 app.listen(PORT, () => {
     console.log('Listening on', PORT);
